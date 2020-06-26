@@ -1,0 +1,53 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+@implements IDisposable
+<h1>Messages</h1>
+
+<table class="table" id="messageList">
+    <thead>
+        <tr>
+            <th>From Number</th>
+            <th>Message</th>
+        </tr>
+        @foreach (var message in _messages)
+        {
+            <tr>
+                <td>@message.FromNumber</td>
+                <td>@message.Text</td>
+            </tr>
+        }
+    </thead>
+
+</table>
+
+@code {
+    private HubConnection _hubConnection;
+    private List<Message> _messages = new List<Message>();
+    private class Message
+    {
+        public string FromNumber { get; set; }
+        public string Text { get; set; }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/SmsHub"))
+            .Build();
+        _hubConnection.On<string, string>("ReceiveMessage", (from, text) =>
+        {
+            var message = new Message { FromNumber = from, Text = text };
+            _messages.Add(message);
+            StateHasChanged();
+        });
+        await _hubConnection.StartAsync();
+    }
+
+    public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = _hubConnection.DisposeAsync();
+    }
+}
