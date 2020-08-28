@@ -4,15 +4,14 @@
 
 This repository demonstrates how to receive an SMS message with Blazor. It contains an asp.net server that, when run, will listen on an InboundSms route and push inbound sms's to any browser's connected to the server.
 
-## Welcome to Nexmo
+## Welcome to Vonage
 
-If you're new to Nexmo, you can [sign up for a Nexmo account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=receive-sms-blazor) and get some free credit to get you started.
+If you're new to Vonage, you can [sign up for a Vonage API account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=receive-sms-blazor) and get some free credit to get you started.
 
 ## Prerequisites
 
 * You'll need a Vonage API account. You can [sign up here](https://dashboard.nexmo.com/sign-up)
 * You'll need the latest version of the [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-
 
 ## Testing with Ngrok
 
@@ -38,7 +37,7 @@ The route to our inbound sms webhook would be /api/sms/inboundsms. This means th
 
 ## Test
 
-In order to test, all that's needed is to send a text message to a Nexmo Number associated with your account. That can be found on the dashboard under [numbers->Your Number](https://dashboard.nexmo.com/your-numbers).
+In order to test, all that's needed is to send a text message to a Vonage API Number associated with your account. That can be found on the dashboard under [numbers->Your Number](https://dashboard.nexmo.com/your-numbers).
 
 When all is said and done it will look something like this.
 
@@ -49,8 +48,8 @@ When all is said and done it will look something like this.
 We love to hear from you so if you have questions, comments or find a bug in the project, let us know! You can either:
 
 * Open an issue on this repository
-* Tweet at us! We're [@NexmoDev on Twitter](https://twitter.com/NexmoDev)
-* Or [join the Nexmo Community Slack](https://developer.nexmo.com/community/slack)
+* Tweet at us! We're [@VonageDev on Twitter](https://twitter.com/VonageDev)
+* Or [join the Vonage Developer Community Slack](https://developer.nexmo.com/community/slack)
 
 ## Further Reading
 
