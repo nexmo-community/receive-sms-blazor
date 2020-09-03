@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.5" />
-    <PackageReference Include="Nexmo.Csharp.Client" Version="5.1.0" />
+    <PackageReference Include="Vonage" Version="5.3.0" />
   </ItemGroup>
 
 </Project>
